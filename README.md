@@ -41,8 +41,8 @@ For the Summer of 2020 I decided to keep myself very busy with my fields of inte
 While the Android Application itself will have its own dedicated Repository, The algorithms uesd in the Applicaiton will be developed/pushed here.
 Be it for a head start, rememberance, and/or simply necessity to create certain Condorcet algorithms, I built/will built from scratch:
  * Generic Vertex Class
- * Generic Edge Class
- * Generic Graph Class
+ * Generic Weighted & Unweighted Edge Class
+ * Generic Weighted & Unweighted Graph Class
  * BFS
  * DFS 
  * Djikstra
