@@ -6,12 +6,12 @@ My first three years of College and majoring in Computer Science I had one goal 
 I have explored the fields of Scientific Computing, Android Application Development, Assembly and Computer System principles, Game Design and Visual Programming, web design, Encryption, etc.
 I have gained an (at least basic) intuitive understanding of each of these fields to develop myself as a well rounded Computer Scientist. For my senior year, I am focusing on further exploring depths of certain fields and make myself ready as a competent competitor for namely two categories : IOS/Android Application development and Artifical Intelligence. 
 
-For the Summer of 2020 I decided to keep myself very busy with my fields of interests. In the prior 2/3rds of the Summer, I explored fields such as Graph Theory and Finite Calculus, built my own [website](http://www.eneadodi.com), and completed a multidude of Computer Science Interview Preperation Questions.
+For the Summer of 2020 I decided to keep myself very busy with my fields of interests. In the prior 2/3rds of the Summer, I explored fields such as Graph Theory and Finite Calculus, built my own [website](http://www.eneadodi.com), and completed a multidude (30+) of Computer Science Interview Preperation Questions.
 
 **During the first 2/3rds of Summer 2020 I also:**
 
 * Impletemented various algorithms from scratch (in C++ or Java) such as:
-    * Djikstra's algorithm
+    * Djikstra's algorithm 
     * Kruskal's algorithm
     * BFS & DFS
     * Quicksort and Mergesort
