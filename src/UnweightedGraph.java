@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
 
 public class UnweightedGraph<T>{
 
@@ -68,6 +71,12 @@ public class UnweightedGraph<T>{
 		return this.adjacencyMatrix.get(source).contains(new UnweightedEdge<T>(source,destination,bidirectional));
 	}
 	
+	public void setAllFlags(boolean t) {
+		for(Vertex<T> key : this.adjacencyMatrix.keySet()) {
+			key.setFlag(t);
+		}
+	}
+	
 	/*
 	public void hasEdge(Vertex<T> source, Vertex<T> destination) {
 		
@@ -106,12 +115,95 @@ public class UnweightedGraph<T>{
 		return true;
 	}
 
-	public UnweightedGraph<T> BFS(T value){
-		return new UnweightedGraph<T>();
+	/*
+	 * BFS always finds shortest path. Memory usage as Queue can become very large is a problem.
+	 * The time complexity is also higher than DFS
+	 * Returns the EdgeList if found from Vertex s, otherwise returns null.
+	 */
+	public List<UnweightedEdge<T>> BFS_Search(Vertex<T> s, T d){
+		/*
+		 * 1) Initialize a Queue for the ordering.
+		 * 3) add vertex s to Queue
+		 * 4) while Queue is not empty, add all destination vertices from the adjacency matrix edge list.
+		 * 	At the same time, check if the value of the destination vertexd is equal to the value that we 
+		 * are searching for. 
+		 * 5A) If vertex found, return the edge list. This means ther eis a path from vertex s to d. 
+		 * 5B) if not found, return NULL This means there is no path from vertex s to d
+		 * 
+		 * The returning graph is the path from
+		 * the starting node to the value we are searching for. This path has the additional 
+		 * property of being the shortest path. 
+		 */
+		Queue<Vertex<T>> visitedKeys = new LinkedList<Vertex<T>>();
+		
+		visitedKeys.add(s);
+		visitedKeys.peek().setFlag(true);
+		while(!visitedKeys.isEmpty()) {
+			Vertex<T> curr_vertex = visitedKeys.poll();
+			
+			if(curr_vertex.getValue().equals(d)) {
+				this.setAllFlags(false);
+				return this.adjacencyMatrix.get(curr_vertex);
+			}
+			for(UnweightedEdge<T> e: this.adjacencyMatrix.get(curr_vertex)) {
+				if(!e.getDestination().getFlag()) {
+					e.getDestination().setFlag(true);
+					visitedKeys.add(e.getDestination());
+				}
+			}
+			
+		}
+		
+		this.setAllFlags(false);
+	
+		return null;
 	}
 	
-	public UnweightedGraph<T> DFS(T value){
-		return new UnweightedGraph<T>();
+	
+	/*
+	 * DFS finds a path if it exists. Memory usage is better than BFS but risks falling into
+	 * a cycle if not tracking seen values. Path is not guranteed to bethe shortest. Time Complexity is better
+	 * than BFS.
+	 * DFS would've been easier implemented if done recursively. I assumed graphs can be larger than max memory stack size 
+	 * thus i chose the iterative version. 
+	 * Returns the EdgeList if found from Vertex s, otherwise returns null.
+	 */
+	public List<UnweightedEdge<T>> DFS(Vertex<T> s, T value){
+		/*
+		 * 1) Initialize a Stack for the ordering.
+		 * 3) add vertex s to Stack
+		 * 4) while Queue is not empty, add all destination vertices from the adjacency matrix edge list.
+		 * 	At the same time, check if the value of the destination vertex is equal to the value that we 
+		 * are searching for. 
+		 * 5A) If vertex found, return the edge list. This means there is a path from vertex s to d. 
+		 * 5B) if not found, return NULL This means there is no path from vertex s to d
+		 * 
+		 * The returning graph is the path from
+		 * the starting node to the value we are searching for. This path has the additional 
+		 * prop
+		return new UnweightedGraph<T>();*/
+		Stack<Vertex<T>> visitedKeys = new Stack<Vertex<T>>();
+		visitedKeys.push(s);
+		visitedKeys.peek().setFlag(true);
+		
+		while(!visitedKeys.empty()) {
+			Vertex<T> curr_vertex = visitedKeys.pop();
+			if(curr_vertex.getValue().equals(value)) {
+				this.setAllFlags(false);
+				return this.adjacencyMatrix.get(curr_vertex);
+			}
+			else {
+				for(UnweightedEdge<T> e : this.adjacencyMatrix.get(curr_vertex)) {
+					if(!e.getDestination().getFlag()) {
+						e.getDestination().setFlag(true);
+						visitedKeys.push(e.getDestination());
+					}
+				}
+			}
+		}
+		
+		this.setAllFlags(false);
+		return null;
 	}
 	
 	public UnweightedGraph<T> Djikstra(Vertex<T> a, Vertex<T> b){
