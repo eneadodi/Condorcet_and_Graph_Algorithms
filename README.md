@@ -38,7 +38,8 @@ For the Summer of 2020 I decided to keep myself very busy with my fields of inte
 
 ### Summer 2020 Project 2 : Social Voting Theory Android Application
 
-While the Android Application itself will have its own dedicated Repository, The algorithms uesd in the Applicaiton will be developed/pushed here.
+Both the Android Application repository and the algorithms used/researched will be posted here. 
+
 Be it for a head start, rememberance, and/or simply necessity to create certain Condorcet algorithms, I built/will built from scratch:
  * Generic Vertex Class
  * Generic Weighted & Unweighted Edge Class
@@ -48,3 +49,34 @@ Be it for a head start, rememberance, and/or simply necessity to create certain 
  * Djikstra
  * Tideman Method
  * Kemeny-Young Method
+ 
+**Application Explanation**
+
+For understanding of Software Engineering and the methodologies (such as Agile), I am currently enrolled in a course which focues on just that (where we built a software from scratch throughout the semester as a team). The hope is to understand the team-building, communication, and overall nature of software engineering in this course. That coupled with this project will hopefully give me a necessary foundation not only in the term software engineering as a whole, but the connections and links involved in the entity.
+
+I will be developing a Condorcet Voting Application for the Android operating system. The goal of this application is to familiarize myself with the Front-End and Back-End of application development.
+
+**The overall process of this application will be defined below. For a more in depth analysis and explanation of the application there will be a complementary document with exactly that function.** 
+
+This application can be viewed as an election application. One user will create a voting process, specifying discrete candidates that the other users will be voting upon. Each other user will rank their preferences from their most preferred to their least preferred.
+These rankings will be on a 100 point system. With the current implementation, no two candidates can tie in points. As an example:
+
+Dinner for Tonight:
+   Enea's Ranking
+   * Pizza : 63
+   * Pasta : 64
+   * Börek : 97
+   * Cheesecake : 23
+
+Initally, these rankings will simply be converted to a candidate sorting (1st Börek , 2nd Pasta, 3rd Pizza, 4th Cheescake)
+
+Once a user has voted, their rankings will be uploaded to a cloud dattabase (such as firebase) under their account. 
+Once all users have voted, the backend automatically runs Tideman's method on the rankings and will attempt to output the candidate who is the Condorcet Winner.
+Each user will be notified of the results on their accounts.
+
+In the case where no Condorcet winner is achieved, my modification of the Tideman's method, using the point system, will weigh the preferences of the users and 
+output a proxy-Condorcet Winner. It will initally attempt to do so with the slightest weighing of the preferences, and increase the weights until a proxy-Condorcet Winner is found. 
+
+**Condorcet Winner** - The candidate that would win a majority of the vote in all of the head-to-head elections against each of the other candidates
+More information about Condorcet winners: https://en.wikipedia.org/wiki/Condorcet_method
+
