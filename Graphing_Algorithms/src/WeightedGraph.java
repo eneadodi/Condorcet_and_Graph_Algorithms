@@ -1,6 +1,8 @@
 
 import java.util.*;
 
+//NOT WORKING IMPLEMENTATION. WILL LIKELY SCRAP AND RESTART TO AVOID
+//SPAGHETTIFICATION
 public class WeightedGraph<T>{
 	
 	//Adjency list will only feature Edges. Each edge will have a from and to.
