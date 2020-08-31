@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Template: https://www.javatpoint.com/android-custom-listview-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/index_choice_input_PCLV"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:backgroundTint="@color/cyan"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        android:inputType="number"
+        android:gravity="left"
+        android:background="@color/colorPrimaryDark"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/Title_Of_Choice_PCLV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Choice 1"
+                android:textSize="20sp" />
+
+            <SeekBar
+                android:id="@+id/value_preference_seekbar_PCLV"
+                android:layout_width="275dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:max="100"
+                android:progress="100" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/value_preference_ET_PCLV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="100"
+            android:layout_gravity="top"
+            android:backgroundTint="@color/gray_text_hint"
+            android:layout_marginLeft="1dp"
+            android:letterSpacing="0.25"
+            android:textSize="35sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Log_In_Activity">
+
+    <LinearLayout
+        android:id="@+id/LL_Username_and_Password"
+        android:layout_width="225dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/UsernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/UsernameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Username"
+                android:textSize="10sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/PasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/PasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Password"
+                android:textSize="10sp" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Login_button"
+        android:layout_width="173dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Log In"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <LinearLayout
+        android:id="@+id/LL_Facebook_Google_Forgot"
+        android:layout_width="224dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_button">
+
+        <ImageButton
+            android:id="@+id/Login_With_Facebook"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_margin="0dp"
+            android:background="#000"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="Button" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#000"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="Button" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            style="@style/HyperLinkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Forgot your password?"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="157dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LL_Facebook_Google_Forgot"
+        app:layout_constraintVertical_bias="0.666">
+
+        <TextView
+            android:id="@+id/need_account"
+            style="@style/lightGray"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:gravity="center"
+            android:text="Need an account?" />
+
+        <TextView
+            android:id="@+id/Sign_Up_Link"
+            style="@style/HyperLinkText"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:gravity="center"
+            android:text="@string/Sign_up_here" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

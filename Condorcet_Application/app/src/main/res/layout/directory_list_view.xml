@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Template: https://www.javatpoint.com/android-custom-listview-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:textColor="#4d4d4d"
+        android:layout_marginRight="20dp"/>
+
+    <LinearLayout
+        android:paddingLeft="6dp"
+        android:id="@+id/created_by_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/created_by_label"
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Created By:" />
+
+        <TextView
+            android:id="@+id/subtitle1_Created_By"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:text="Created By: Enea Dodi" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/categories_layout"
+        android:paddingLeft="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:id="@+id/categories_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Categories:" />
+
+        <TextView
+            android:id="@+id/subtitle2_Categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:text="Categories: 6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shared_with_layout"
+        android:paddingLeft="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/shared_with_label"
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shared With:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtitle3_Shared_With"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:text="Shared With: Shannon, Howard, Jack, Alex, Ben, Orion, and 5 others..." />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bar"
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>
